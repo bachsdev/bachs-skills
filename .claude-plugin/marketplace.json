@@ -1,0 +1,15 @@
+{
+  "name": "bachs",
+  "description": "Official Bachs skills for AI coding assistants.",
+  "owner": {
+    "name": "Bachs",
+    "email": "support@bachs.io"
+  },
+  "plugins": [
+    {
+      "name": "bachs",
+      "source": "./",
+      "description": "Build Bachs payment integrations or review one before go-live."
+    }
+  ]
+}

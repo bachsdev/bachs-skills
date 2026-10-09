@@ -1,0 +1,12 @@
+{
+  "name": "bachs",
+  "description": "Build Bachs payment integrations (one-time checkout, SaaS subscriptions, marketplaces with Connect) or review one before go-live.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Bachs",
+    "email": "support@bachs.io"
+  },
+  "homepage": "https://docs.bachs.io/build/ai/skills",
+  "repository": "https://github.com/bachsdev/bachs-skills",
+  "license": "MIT"
+}
