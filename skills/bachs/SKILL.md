@@ -40,19 +40,15 @@ or portal settings. Separate dashboard setup from routes in the user's app.
 
 ## Use the official SDK when supported
 
-For a Node.js or TypeScript server, use the official @bachs/sdk for products,
-checkout sessions, subscriptions, customer portal sessions and webhook
-verification. Read https://github.com/bachsdev/bachs-node before choosing methods
-or types. Construct Bachs with apiKey and an explicit environment. Use
+For a Node.js or TypeScript server, install the official SDK from npm
+(npm install @bachs/sdk) and use it for products, checkout sessions,
+subscriptions, customer portal sessions and webhook verification. Read
+https://docs.bachs.io/sdk/node.md before choosing methods or types. Construct Bachs with apiKey and an explicit environment. Use
 webhooks.constructEvent on the raw body and request headers; keep event
 persistence and business decisions in the app.
 
-Check the package's actual exports and version. The npm 0.0.1 package is a
-placeholder, not the tested implementation. Until the 1.0.0 implementation is
-released on npm, the public starter includes its packaged copy and provenance:
-https://github.com/bachsdev/bachs-nextjs-saas/tree/main/vendor
-Do not install the placeholder or add a dependency on a local sibling repository.
-After the matching release is available, use its exact npm version.
+Use version 1.0.0 or later; 0.0.1 was a placeholder. Check the installed
+package's exports rather than assuming methods exist.
 
 The SDK sends writes once and reports outcomeUnknown on uncertain writes.
 Persist operation keys in the app and reconcile before sending again. Do not
