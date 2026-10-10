@@ -1,7 +1,7 @@
 {
   "name": "bachs",
   "description": "Build Bachs payment integrations (one-time checkout, SaaS subscriptions, marketplaces with Connect) or review one before go-live.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Bachs",
     "email": "support@bachs.io"

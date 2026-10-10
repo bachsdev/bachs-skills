@@ -97,8 +97,13 @@ Other server languages can use the documented API.
 
 ### One-time payment
 Use hosted checkout first unless an overlay is requested. Create it on the
-server using product_cart and a local order reference. Fulfil once from
-collection.succeeded after matching the order. Show pending, paid, and
+server using product_cart and a local order ID as its reference; a reference is
+unique for good, even after expiry. Fulfil once on checkout.completed or
+collection.succeeded, whichever arrives first, after retrieving the checkout and
+matching its status (completed), amount and currency to the order; if it is not
+completed yet, return 5xx so the event is retried. collection.failed is not
+final, and a payment can still complete a checkout after checkout.expired.
+See https://docs.bachs.io/build/use-cases/digital-products.md. Show pending, paid, and
 unsuccessful outcomes from stored order state.
 
 ### SaaS subscriptions
