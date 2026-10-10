@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- Install the Node.js SDK from npm (`npm install @bachs/sdk`, 1.0.0 or later) and read its docs page, instead of the starter's bundled copy.
+
 ## 1.0.0 (2026-10-09)
 
 - First release of the `bachs` skill: one-time payments, SaaS subscriptions and marketplace payments with Connect, plus a review of an existing integration before go-live.
