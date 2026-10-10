@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- One-time payments: fulfil on `checkout.completed` or `collection.succeeded`, whichever arrives first, after retrieving the checkout and matching it to the order. `collection.failed` is not final, and a payment can complete a checkout after `checkout.expired`.
+
 ## 1.0.0 (2026-10-09)
 
 - First release of the `bachs` skill: one-time payments, SaaS subscriptions and marketplace payments with Connect, plus a review of an existing integration before go-live.
