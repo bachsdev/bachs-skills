@@ -47,12 +47,9 @@ or types. Construct Bachs with apiKey and an explicit environment. Use
 webhooks.constructEvent on the raw body and request headers; keep event
 persistence and business decisions in the app.
 
-Check the package's actual exports and version. The npm 0.0.1 package is a
-placeholder, not the tested implementation. Until the 1.0.0 implementation is
-released on npm, the public starter includes its packaged copy and provenance:
-https://github.com/bachsdev/bachs-nextjs-saas/tree/main/vendor
-Do not install the placeholder or add a dependency on a local sibling repository.
-After the matching release is available, use its exact npm version.
+Install @bachs/sdk 1.0.0 or later from npm (Node.js 22 or later) and check the
+package's actual exports. Version 0.0.1 is an empty placeholder; do not install
+it or add a dependency on a local sibling repository.
 
 The SDK sends writes once and reports outcomeUnknown on uncertain writes.
 Persist operation keys in the app and reconcile before sending again. Do not

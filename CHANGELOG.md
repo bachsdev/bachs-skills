@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- The SDK section now says to install `@bachs/sdk` 1.0.0 or later from npm, which is published, instead of using the Next.js starter's vendored copy.
+
 ## 1.0.1
 
 - One-time payments: fulfil on `checkout.completed` or `collection.succeeded`, whichever arrives first, after retrieving the checkout and matching it to the order. `collection.failed` is not final, and a payment can complete a checkout after `checkout.expired`.
