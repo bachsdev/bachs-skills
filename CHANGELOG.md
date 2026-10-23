@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- The SDK section covers the official Python SDK (`bachs`) next to `@bachs/sdk`, and asks for 2.0.0 or later of either.
+- Describes the 2.0 shape of both SDKs: the environment comes from the key, `listAll` / `list_all` walk every page, `statusCode` / `status_code` is the HTTP status code and `errorCode` / `error_code` the Bachs error code, and Python uses keyword arguments and attribute access.
+
 ## 1.0.2
 
 - The SDK section now says to install `@bachs/sdk` 1.0.0 or later from npm, which is published, instead of using the Next.js starter's vendored copy.

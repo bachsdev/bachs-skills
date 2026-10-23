@@ -41,25 +41,37 @@ or portal settings. Separate dashboard setup from routes in the user's app.
 ## Use the official SDK when supported
 
 For a Node.js or TypeScript server, use the official @bachs/sdk for products,
-checkout sessions, subscriptions, customer portal sessions and webhook
-verification. Read https://github.com/bachsdev/bachs-node before choosing methods
-or types. Construct Bachs with apiKey and an explicit environment. Use
-webhooks.constructEvent on the raw body and request headers; keep event
-persistence and business decisions in the app.
+checkout sessions, subscriptions, customer portal sessions, payouts and webhook
+verification. For a Python server, use the official bachs package, which has the
+same resources with a sync client (Bachs) and an async client (AsyncBachs). Read
+https://github.com/bachsdev/bachs-node or https://github.com/bachsdev/bachs-python
+before choosing methods or types, and check the package's actual exports.
 
-Install @bachs/sdk 1.0.0 or later from npm (Node.js 22 or later) and check the
-package's actual exports. Version 0.0.1 is an empty placeholder; do not install
-it or add a dependency on a local sibling repository.
+Install @bachs/sdk 2.0.0 or later from npm (Node.js 22 or later), or bachs 2.0.0
+or later from PyPI (Python 3.10 or later). Version 0.0.1 of either is an empty
+placeholder; do not install it or add a dependency on a local sibling repository.
+Do not write 1.x code: in 2.0 the HTTP status code on an API error is statusCode
+(status_code in Python) and the Bachs error code is errorCode (error_code), and
+in Python request fields are keyword arguments and responses are typed objects
+read with attributes (payout.status, not payout["status"]).
 
-The SDK sends writes once and reports outcomeUnknown on uncertain writes.
-Persist operation keys in the app and reconcile before sending again. Do not
-build another transport, response decoder or signature verifier for supported
-SDK operations. Do not log full provider error bodies or portal URLs.
+Construct the client with apiKey only. The key decides the environment: an
+sk_sandbox_ key uses the sandbox and an sk_live_ key uses production. Passing an
+environment that contradicts the key is an error. Use webhooks.constructEvent
+(webhooks.construct_event in Python) on the raw body and request headers; keep
+event persistence and business decisions in the app. Use listAll (list_all) to
+walk every item of a list, and list for one page.
 
-The current SDK does not support Connect account context, seller onboarding or
-checkout split fields. Use documented API requests for those marketplace
-operations; do not invent SDK methods or pass unsupported fields through casts.
-Other server languages can use the documented API.
+The SDK sends writes once and reports outcomeUnknown (outcome_unknown) on
+uncertain writes. Persist operation keys in the app and reconcile before sending
+again. Do not build another transport, response decoder or signature verifier
+for supported SDK operations. Do not log full provider error bodies or portal
+URLs; the SDK's own logging never does.
+
+The current SDKs do not support Connect account context, seller onboarding,
+checkout split fields, customers, refunds or disputes. Use documented API
+requests for those operations; do not invent SDK methods or pass unsupported
+fields through casts. Other server languages can use the documented API.
 
 ## Integration rules
 
